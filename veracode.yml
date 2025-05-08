@@ -5,7 +5,7 @@ cveracode_static_scan:
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
-      - 'js-dynamic'
+      - '*'
     branches_to_exclude:
       - 'js-dynamic-2'
   pull_request:
