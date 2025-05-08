@@ -1,12 +1,13 @@
 veracode_static_scan:
   push:
-    trigger: false
+    trigger: true
     # Please only specify either branches_to_run or branches_to_exclude
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
-      - '*'
+      - 'js-dynamic'
     branches_to_exclude:
+      - 'js-dynamic-1'
   pull_request:
     trigger: false
     action:
@@ -40,15 +41,16 @@ veracode_static_scan:
 
 veracode_sca_scan:
   push:
-    trigger: false
+    trigger: true
     # Please only specify either branches_to_run or branches_to_exclude
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
       - '*'
     branches_to_exclude:
+      - 'js-dynamic'
   pull_request:
-    trigger: true
+    trigger: false
     action:
       - opened
       - synchronize
@@ -67,15 +69,16 @@ veracode_sca_scan:
 
 veracode_iac_secrets_scan:
   push:
-    trigger: false
+    trigger: true
     # Please only specify either branches_to_run or branches_to_exclude
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
       - '*'
     branches_to_exclude:
+      - 'js-dynamic'
   pull_request:
-    trigger: true
+    trigger: false
     action:
       - opened
       - synchronize
